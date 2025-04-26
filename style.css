@@ -1,49 +1,55 @@
-body{
-
-
+body {
 
 }
 
-#etch-a-sketch{
-
-
-    
-}
-
-#main-container{
-
+#main-container {
 
 }
 
-#sidebar{
-
-
-}
-
-.erase{
+#reset-container {
 
 }
 
-.reset{
+#reset {
 
 }
 
-#grid{
-
-
-}
-
-.container{
-
+#middle {
 
 }
 
-#bottom{
-
+#sidebar {
 
 }
 
-.sizevalue{
+#erase {
 
+}
+
+#colorpicker {
+
+}
+
+#grid {
+
+}
+
+#container {
+
+}
+
+.square {
+
+}
+
+#bottom {
+
+}
+
+#sizeSlider {
+
+}
+
+#sizeValue {
 
 }
