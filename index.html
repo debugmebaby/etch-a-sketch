@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Etch-A-Sketch></title>
-        <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-A-Sketch</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
 
+<div class="etch-a-sketch"> 
 
-<div class="main-container">
+  <div class="top-buttons">
+    <button id="reset">Shake</button>
+  </div>
+
+  <div class="middle-section">
     <div class="sidebar">
-        <input type="color" id="colorpicker" value="#000000">
-        <button id="erase">Erase</button>
-        <button id="reset">Shake</button>
-     </div>
-</div>
-
-<div class="grid">
-    <div id="container">  
+      <input type="color" id="colorpicker" value="#000000">
+      <button id="erase">Erase</button>
     </div>
-</div>
 
-<div class="bottom">
+    <div class="grid">
+      <div id="container"></div>  
+    </div>
+  </div>
+
+  <div class="bottom-section">
     <input type="range" min="1" max="100" value="16" id="sizeSlider">
     <div id="sizeValue">16 x 16</div>
   </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
