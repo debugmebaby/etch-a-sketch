@@ -1,12 +1,26 @@
 const container = document.querySelector("#container");
 const eraseButton = document.querySelector("#erase");
 const colorPicker = document.querySelector("#colorpicker");
+const sizeSlider = document.querySelector("#sizeSlider");
+const sizeValue = document.querySelector("#sizeValue");
+const resetButton = document.querySelector("#reset"); 
 
 let isErasing = false;
 let currentColor = colorPicker.value;
+let defaultSize = 16; 
 
 colorPicker.addEventListener("input", (e) => {
   currentColor = e.target.value;
+});
+
+sizeSlider.addEventListener("input", (e) => {
+  const newSize = e.target.value;
+  sizeValue.textContent = `${newSize} x ${newSize}`;
+  createGrid(newSize);
+});
+
+resetButton.addEventListener("click", () => {
+  createGrid(defaultSize); 
 });
 
 function createGrid(size) {
@@ -44,4 +58,5 @@ eraseButton.addEventListener("click", () => {
   eraseButton.textContent = isErasing ? "Draw" : "Erase";
 });
 
-createGrid(16);
+
+createGrid(defaultSize);
