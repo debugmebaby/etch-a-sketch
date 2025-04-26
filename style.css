@@ -1,14 +1,13 @@
 body {
     margin: 0;
     padding: 25px;
-    background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+    height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    background: radial-gradient(circle, #2c2c2c, #1a1a1a);
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
   }
-  
-  
   
   #main-container {
     background-color: rgb(241, 6, 6);
@@ -23,10 +22,10 @@ body {
   }
   
   #main-container:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Skugga under */
-    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); 
+    transform: translateY(-10px) scale(1.05); 
   }
-
+  
   #reset-container {
     margin-bottom: 25px;
   }
@@ -49,7 +48,6 @@ body {
     flex-direction: column;
     gap: 15px;
     align-items:center;
-    
   }
   
   #erase {
@@ -57,12 +55,11 @@ body {
     font-size: 16px;
     border-radius: 15px;
   }
-
+  
   #colorpicker {
     padding: 10px;
     font-size: 16px;
     border-radius: 15px;
-
   }
   
   #grid {
@@ -78,12 +75,15 @@ body {
     height: 300px; 
     background-color: white;
     border: 2px solid black;
-    border-radius: 20px; 
+    border-radius: 20px;
+    box-sizing: border-box; 
+    overflow: hidden; 
   }
   
   .square {
     box-sizing: border-box;
     border: 1px solid lightgray;
+    background-color: white;
   }
   
   #bottom {
@@ -101,5 +101,4 @@ body {
     font-size: 22px;
     color: black;
   }
-  
   
