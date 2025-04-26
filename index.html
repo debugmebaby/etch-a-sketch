@@ -8,25 +8,25 @@
 </head>
 <body>
 
-<div class="etch-a-sketch"> 
+<div id="main-container"> 
 
-  <div class="top-buttons">
+  <div id="reset-container">
     <button id="reset">Shake</button>
   </div>
 
-  <div class="middle-section">
-    <div class="sidebar">
+  <div id="middle">
+    <div id="sidebar">
       <input type="color" id="colorpicker" value="#000000">
       <button id="erase">Erase</button>
     </div>
 
-    <div class="grid">
-      <div id="container"></div>  
+    <div id="grid">
+      <div id="container"></div>
     </div>
   </div>
 
-  <div class="bottom-section">
-    <input type="range" min="1" max="100" value="16" id="sizeSlider">
+  <div id="bottom">
+    <input type="range" min="16" max="100" value="16" id="sizeSlider">
     <div id="sizeValue">16 x 16</div>
   </div>
 
@@ -35,3 +35,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
