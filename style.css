@@ -10,6 +10,7 @@ body {
 }
 
 #main-container {
+  background-color: rgb(241, 6, 6);
   padding: 30px;
   border-radius: 45px;
   display: flex;
@@ -19,26 +20,10 @@ body {
   height: 450px; 
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-  background-color: rgb(241, 6, 6);
-  animation: colorShift 10s infinite alternate;
 }
 
-@keyframes colorShift {
-  0% {
-      background-color: #ff0000; /* Röd */
-  }
-  25% {
-      background-color: #ff4d00; /* Ljusare röd */
-  }
-  50% {
-      background-color: #ff7f00; /* Orange */
-  }
-  75% {
-      background-color: #ff9900; /* Gulaktig röd */
-  }
-  100% {
-      background-color: #ff1a1a; /* Mörk röd */
-  }
+#main-container.shake {
+  animation: shake 0.5s ease forwards;
 }
 
 #main-container:hover {
@@ -46,44 +31,78 @@ body {
   transform: translateY(-10px) scale(1.05); 
 }
 
+@keyframes shake {
+  0% {
+      transform: translateY(0);
+  }
+  25% {
+      transform: translateY(-10px);
+  }
+  50% {
+      transform: translateY(10px);
+  }
+  75% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
 #reset-container {
   margin-bottom: 25px;
 }
 
-#reset, #colorpicker, #erase {
-  padding: 10px;
-  font-size: 16px;
+#reset {
+  padding: 10px 20px;
+  font-size: 18px;
   border-radius: 15px;
-  background-color: #FFEB3B; /* Gul bakgrund */
-  color: black; /* Svart text */
+  background-color: yellow;
+  color: black;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#reset:hover, #colorpicker:hover, #erase:hover {
-  background-color: #FBC02D; /* Mörkare gul vid hover */
+#reset:hover {
+  background-color: orange;
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-#reset:active, #colorpicker:active, #erase:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #middle {
   display: flex;
   gap: 30px;
   margin-bottom: 20px;
-  align-items:center;
+  align-items: center;
 }
 
 #sidebar {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items:center;
+  align-items: center;
+}
+
+#erase {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  background-color: yellow;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#erase:hover {
+  background-color: orange;
+  transform: scale(1.1);
+}
+
+#colorpicker {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
 }
 
 #grid {
@@ -95,13 +114,13 @@ body {
 #container {
   display: flex;
   flex-wrap: wrap;
-  width: 500px; 
-  height: 300px; 
+  width: 500px;
+  height: 300px;
   background-color: white;
   border: 2px solid black;
   border-radius: 20px;
-  box-sizing: border-box; 
-  overflow: hidden; 
+  box-sizing: border-box;
+  overflow: hidden;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -119,7 +138,7 @@ body {
 }
 
 #sizeSlider {
-  width: 300px; 
+  width: 300px;
 }
 
 #sizeValue {
