@@ -22,6 +22,10 @@ sizeSlider.addEventListener("input", (e) => {
 resetButton.addEventListener("click", () => {
   shakeAnimation();
   createGrid(defaultSize);
+
+  // Reset the size slider to its default value and update the size value display
+  sizeSlider.value = defaultSize; // Reset the slider value
+  sizeValue.textContent = `${defaultSize} x ${defaultSize}`; // Update the displayed size value
 });
 
 function shakeAnimation() {
