@@ -124,7 +124,7 @@ body {
 
 /* Color Picker */
 .colorpicker {
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   border-radius: 15px;
   background-color: yellow;
@@ -156,6 +156,7 @@ body {
   box-sizing: border-box;
   border: 1px solid lightgray;
   background-color: white;
+  border-radius: 3px;
 }
 
 /* Bottom controls */
