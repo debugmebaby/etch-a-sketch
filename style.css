@@ -27,7 +27,7 @@ body {
 /* Justering av stjärnorna så de inte påverkar den mörka bakgrunden */
 .star-background .star {
   position: absolute;
-  background-color: white;
+  background-color: yellow;
   border-radius: 50%;
   opacity: 0.5;
   animation: starAnimation 5s linear infinite;
