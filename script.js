@@ -6,22 +6,68 @@ const sizeSlider = document.querySelector(".sizeSlider");
 const sizeValue = document.querySelector(".sizeValue");
 const resetButton = document.querySelector(".reset");
 const mainContainer = document.querySelector(".main-container");
+const starModeButton = document.querySelector(".star-mode-button"); // Ny knapp för star mode
 
 let isErasing = false;
 let isRainbow = false;
 let currentColor = colorPicker.value;
 let defaultSize = 16;
+let starModeActive = false;
 
+// Event för att hantera knappen för star mode
+starModeButton.addEventListener("click", () => {
+  starModeActive = !starModeActive;
+
+  if (starModeActive) {
+    activateStarMode();
+  } else {
+    deactivateStarMode();
+  }
+});
+
+// Funktion för att aktivera stjärnhimmel
+function activateStarMode() {
+  const starBackground = document.createElement('div');
+  starBackground.classList.add('star-background');
+  
+  // Skapa stjärnorna
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    const size = Math.random() * 2 + 1; // Slumpmässig storlek för varje stjärna
+    const positionX = Math.random() * window.innerWidth;
+    const positionY = Math.random() * window.innerHeight;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.left = `${positionX}px`;
+    star.style.top = `${positionY}px`;
+    starBackground.appendChild(star);
+  }
+
+  document.body.appendChild(starBackground);
+}
+
+// Funktion för att avaktivera stjärnhimmel
+function deactivateStarMode() {
+  const starBackground = document.querySelector('.star-background');
+  if (starBackground) {
+    starBackground.remove();
+  }
+}
+
+// Knapp för att välja färg
 colorPicker.addEventListener("input", (e) => {
   currentColor = e.target.value;
 });
 
+// Ändra gridstorlek
 sizeSlider.addEventListener("input", (e) => {
   const newSize = e.target.value;
   sizeValue.textContent = `${newSize} x ${newSize}`;
   createGrid(newSize);
 });
 
+// Reset-knapp
 resetButton.addEventListener("click", () => {
   shakeAnimation();
   createGrid(defaultSize);
@@ -29,6 +75,7 @@ resetButton.addEventListener("click", () => {
   sizeValue.textContent = `${defaultSize} x ${defaultSize}`;
 });
 
+// Eraser-knapp
 eraseButton.addEventListener("click", () => {
   isErasing = !isErasing;
   isRainbow = false;
@@ -36,6 +83,7 @@ eraseButton.addEventListener("click", () => {
   rainbowButton.textContent = "Rainbow";
 });
 
+// Rainbow-knapp
 rainbowButton.addEventListener("click", () => {
   isRainbow = !isRainbow;
   isErasing = false;
@@ -43,6 +91,7 @@ rainbowButton.addEventListener("click", () => {
   eraseButton.textContent = "Erase";
 });
 
+// Funktion för shake-animation
 function shakeAnimation() {
   mainContainer.classList.add("shake");
   setTimeout(() => {
@@ -50,6 +99,7 @@ function shakeAnimation() {
   }, 500);
 }
 
+// Skapa gridet
 function createGrid(size) {
   while (container.firstChild) {
     container.removeChild(container.firstChild);
@@ -92,6 +142,7 @@ function createGrid(size) {
   });
 }
 
+// Funktion för slumpmässig färg (rainbow mode)
 function randomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
