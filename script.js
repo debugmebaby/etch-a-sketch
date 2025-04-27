@@ -3,11 +3,11 @@ const eraseButton = document.querySelector("#erase");
 const colorPicker = document.querySelector("#colorpicker");
 const sizeSlider = document.querySelector("#sizeSlider");
 const sizeValue = document.querySelector("#sizeValue");
-const resetButton = document.querySelector("#reset"); 
+const resetButton = document.querySelector("#reset");
 
 let isErasing = false;
 let currentColor = colorPicker.value;
-let defaultSize = 16; 
+let defaultSize = 16;
 
 colorPicker.addEventListener("input", (e) => {
   currentColor = e.target.value;
@@ -20,8 +20,17 @@ sizeSlider.addEventListener("input", (e) => {
 });
 
 resetButton.addEventListener("click", () => {
-  createGrid(defaultSize); 
+  shakeAnimation();
+  createGrid(defaultSize);
 });
+
+function shakeAnimation() {
+  const mainContainer = document.getElementById("main-container");
+  mainContainer.classList.add("shake");
+  setTimeout(() => {
+    mainContainer.classList.remove("shake");
+  }, 500); // Remove the shake class after the animation is complete
+}
 
 function createGrid(size) {
   while (container.firstChild) {
@@ -57,6 +66,5 @@ eraseButton.addEventListener("click", () => {
   isErasing = !isErasing;
   eraseButton.textContent = isErasing ? "Draw" : "Erase";
 });
-
 
 createGrid(defaultSize);
