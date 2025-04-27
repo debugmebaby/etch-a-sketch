@@ -164,6 +164,11 @@ body {
   background-color: yellow;
 }
 
+.colorpicker:hover{
+  background-color: orange;
+  transform: scale(1.1);
+}
+
 /* Grid */
 .grid {
   display: flex;
@@ -240,6 +245,11 @@ body {
   color: yellow;
 }
 .star-mode-button{
-border-radius: 5px;
+border-radius: 15px;
 background-color: yellow;
+}
+
+.star-mode-button:hover{
+  background-color: orange;
+  transform: scale(1.1);
 }
