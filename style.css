@@ -1,106 +1,142 @@
 body {
-    margin: 0;
-    padding: 25px;
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #2c2c2c, #1a1a1a);
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  margin: 0;
+  padding: 25px;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #2c2c2c, #1a1a1a);
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+}
+
+#main-container {
+  padding: 30px;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 450px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: colorShift 6s infinite alternate; /* Ändra färger kontinuerligt */
+}
+
+#main-container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px) scale(1.05);
+}
+
+#reset-container {
+  margin-bottom: 25px;
+}
+
+#reset {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius:15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#reset:hover {
+  transform: scale(1.1);
+}
+
+#middle {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+#erase {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#erase:hover {
+  transform: scale(1.1);
+}
+
+#colorpicker {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#colorpicker:hover {
+  transform: scale(1.1);
+}
+
+#grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.square {
+  box-sizing: border-box;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+
+#bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#sizeSlider {
+  width: 300px;
+}
+
+#sizeValue {
+  font-size: 20px;
+  color: black;
+}
+
+
+@keyframes colorShift {
+  0% {
+    background-color: #ff6347; 
   }
-  
-  #main-container {
-    background-color: rgb(241, 6, 6);
-    padding: 30px;
-    border-radius: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 700px; 
-    height: 450px; 
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  20% {
+    background-color: #ff7f50; 
   }
-  
-  #main-container:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); 
-    transform: translateY(-10px) scale(1.05); 
+  40% {
+    background-color: #ff1493; 
   }
-  
-  #reset-container {
-    margin-bottom: 25px;
+  60% {
+    background-color: #8a2be2; 
   }
-  
-  #reset {
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius:15px;
+  80% {
+    background-color: #3cb371; 
   }
-  
-  #middle {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 20px;
-    align-items:center;
+  100% {
+    background-color: #ff6347; 
   }
-  
-  #sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items:center;
-  }
-  
-  #erase {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 15px;
-  }
-  
-  #colorpicker {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 15px;
-  }
-  
-  #grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 500px; 
-    height: 300px; 
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 20px;
-    box-sizing: border-box; 
-    overflow: hidden; 
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5) !important;
-  }
-  
-  .square {
-    box-sizing: border-box;
-    border: 1px solid lightgray;
-    background-color: white;
-  }
-  
-  #bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  #sizeSlider {
-    width: 300px; 
-  }
-  
-  #sizeValue {
-    font-size: 20px;
-    color: black;
-  }
-  
+}
