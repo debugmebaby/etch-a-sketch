@@ -1,12 +1,46 @@
+/* Main Body */
 body {
   margin: 0;
   padding: 25px;
-  height: 100dvh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #2c2c2c, #1a1a1a);
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-color: black; /* Sätt en fast svart bakgrund */
+  overflow: hidden; /* Förhindrar scrollning */
+  position: relative;
+}
+
+/* Starry background */
+.star-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Se till att bakgrunden är svart */
+  z-index: -1;
+  pointer-events: none;
+  animation: moveStars 20s linear infinite;
+}
+
+/* Justering av stjärnorna så de inte påverkar den mörka bakgrunden */
+.star-background .star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: starAnimation 5s linear infinite;
+}
+
+@keyframes moveStars {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(0); } /* Ta bort glidning av stjärnorna, håll dem på plats */
+}
+
+@keyframes starAnimation {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(100px) translateY(100px); }
 }
 
 /* Main Container */
