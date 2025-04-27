@@ -6,8 +6,10 @@ body {
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle, #2c2c2c, #1a1a1a);
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Noisy texture återställd här */
+  background-size: cover;
 }
+
 
 .main-container {
   background-color: rgb(241, 6, 6);
