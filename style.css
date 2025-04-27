@@ -140,10 +140,28 @@ body {
 }
 
 .sizeSlider {
+  -webkit-appearance: none;
   width: 300px;
+  height: 10px;
+  background: #f1f606; 
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+
+.sizeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #f1f606; 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .sizeValue {
   font-size: 20px;
-  color: black;
+  color: #f1f606;
 }
