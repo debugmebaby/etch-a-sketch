@@ -1,9 +1,9 @@
-const container = document.querySelector("#container");
-const eraseButton = document.querySelector("#erase");
-const colorPicker = document.querySelector("#colorpicker");
-const sizeSlider = document.querySelector("#sizeSlider");
-const sizeValue = document.querySelector("#sizeValue");
-const resetButton = document.querySelector("#reset");
+const container = document.querySelector(".container");
+const eraseButton = document.querySelector(".erase");
+const colorPicker = document.querySelector(".colorpicker");
+const sizeSlider = document.querySelector(".sizeSlider");
+const sizeValue = document.querySelector(".sizeValue");
+const resetButton = document.querySelector(".reset");
 
 let isErasing = false;
 let currentColor = colorPicker.value;
@@ -25,7 +25,7 @@ resetButton.addEventListener("click", () => {
 });
 
 function shakeAnimation() {
-  const mainContainer = document.getElementById("main-container");
+  const mainContainer = document.querySelector(".main-container");
   mainContainer.classList.add("shake");
   setTimeout(() => {
     mainContainer.classList.remove("shake");
