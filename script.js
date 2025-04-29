@@ -34,16 +34,28 @@ function activateStarMode() {
   for (let i = 0; i < 500; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
-    const size = Math.random() * 2 + 1; // Slumpmässig storlek för varje stjärna
+    
+    // Slumpmässig storlek för varje stjärna
+    const size = Math.random() * 3 + 1; // Slumpmässig storlek mellan 1 och 4 pixlar
     const positionX = Math.random() * window.innerWidth;
     const positionY = Math.random() * window.innerHeight;
+
+    // Slumpa en färg (blå, vit eller gul)
+    const starColor = getRandomStarColor();
+    
+    // Sätt storlek, position, färg och skugga för stjärnorna
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.left = `${positionX}px`;
     star.style.top = `${positionY}px`;
+    star.style.backgroundColor = starColor;
+    star.style.boxShadow = "0 0 5px 2px rgba(255, 255, 255, 0.6)"; // Lägg till skugga för att få dem att poppa
+
+    // Lägg till stjärnan till stjärnhimmelsbakgrunden
     starBackground.appendChild(star);
   }
 
+  // Lägg till stjärnhimmeln i body
   document.body.appendChild(starBackground);
 }
 
@@ -53,6 +65,13 @@ function deactivateStarMode() {
   if (starBackground) {
     starBackground.remove();
   }
+}
+
+// Funktion för att slumpa färg på stjärnorna (blå, vit eller gul)
+function getRandomStarColor() {
+  const colors = ['#FFFFFF', '#ADD8E6', '#FFFF00']; // Vit, Ljusblå, Gul (ändrat till ljusblå)
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
 }
 
 // Knapp för att välja färg
