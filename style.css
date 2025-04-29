@@ -247,6 +247,8 @@ body {
 .star-mode-button{
 border-radius: 15px;
 background-color: yellow;
+padding: 10px;
+  font-size: 16px;
 }
 
 .star-mode-button:hover{
