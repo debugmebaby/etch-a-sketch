@@ -31,7 +31,7 @@ function activateStarMode() {
   starBackground.classList.add('star-background');
   
   // Skapa stjärnorna
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 500; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
     const size = Math.random() * 2 + 1; // Slumpmässig storlek för varje stjärna
